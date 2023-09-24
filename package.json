@@ -1,15 +1,5 @@
 {
-  "name": "create-express-sequelize",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "node src/server",
-    "dev": "nodemon src/server"
-  },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -19,12 +9,25 @@
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.29.0"
   },
+  "description": "",
   "devDependencies": {
     "jest": "^29.7.0",
     "nodemon": "^2.0.22",
     "supertest": "^6.3.3"
   },
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "create-express-sequelize",
   "overrides": {
     "semver": "^7.5.3"
-  }
+  },
+  "scripts": {
+    "dev": "nodemon src/server",
+    "migrate:reset": "node ./src/tests/testMigrate.js",
+    "pretest": "npm run migrate:reset",
+    "start": "node src/server",
+    "test": "jest --detectOpenHandles"
+  },
+  "version": "1.0.0"
 }
